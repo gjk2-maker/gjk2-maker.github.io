@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Jonathan Kasule builds bridges between finance, analytics and AI. Fordham MSBA (Dec 2026), CFA Level II candidate, based in New York and Kampala.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jonathan Kasule">
+<meta property="og:description" content="Jonathan Kasule builds bridges between finance, analytics and AI. Fordham MSBA (Dec 2026), CFA Level II candidate, based in New York and Kampala.">
+<meta property="og:url" content="https://gyewa-coder.github.io/">
+<meta property="og:image" content="https://gyewa-coder.github.io/photos/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2328327F'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23F3F2FA' text-anchor='middle'%3EJK%3C/text%3E%3C/svg%3E">
+<title>Jonathan Kasule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+<style>
+html{-webkit-text-size-adjust:100%}
+[hidden]{display:none!important}
+
+/* Layout: arched portrait hero, a "now" strip, then bands. Palette lifted from the photos: studio lavender, suit navy, summit wood and ember */
+:root{
+  --paper:#F3F2F7; --surface:#FCFBFE; --ink:#171A3A; --muted:#5D5F7C; --line:#DCDBE8;
+  --navy:#28327F; --navy-soft:#E3E4F4; --ember:#C2501F; --ember-soft:#F7E3D7; --wood:#C09E77; --studio:#727398;
+  --display:"Cormorant Garamond", Garamond, "Times New Roman", serif;
+  --body:"Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --s1:.75rem; --s2:.875rem; --s3:1rem; --s4:1.2rem; --s5:1.75rem; --s6:clamp(2.4rem,4.6vw,3.2rem); --s7:clamp(2.9rem,7vw,5.3rem);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#10112A; --surface:#181A39; --ink:#ECEBF5; --muted:#A2A3C2; --line:#2B2D54;
+  --navy:#9EA7F3; --navy-soft:#232768; --ember:#F08A5B; --ember-soft:#3B2321; --wood:#A88762; --studio:#4D4E72; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#10112A; --surface:#181A39; --ink:#ECEBF5; --muted:#A2A3C2; --line:#2B2D54;
+  --navy:#9EA7F3; --navy-soft:#232768; --ember:#F08A5B; --ember-soft:#3B2321; --wood:#A88762; --studio:#4D4E72; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--s3);line-height:1.6;margin:0}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.05}
+h1,h2{font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-variant-numeric:lining-nums}
+h2{font-size:var(--s6)}
+h3{font-family:var(--body);font-size:var(--s4);font-weight:600;letter-spacing:-.01em;line-height:1.25}
+/* the serif is display-only: anything under ~1.5rem stays in the sans */
+.mark,.stop .city,.th-totals dd,.collage .c strong,.stage blockquote,.feature .q,.badge strong{font-variant-numeric:lining-nums}
+.eyebrow{font-family:var(--mono);font-size:var(--s1);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+p{margin:0;max-width:65ch}
+
+/* nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding-block:.7rem}
+.mark{font-family:var(--display);font-weight:700;font-size:1.45rem;text-decoration:none;letter-spacing:-.005em}
+.mark span{color:var(--ember)}
+nav ul{display:flex;gap:1.1rem;list-style:none;margin:0;padding:0;font-size:var(--s2)}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font:600 var(--s2)/1 var(--body);padding:.75rem 1.05rem;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);text-decoration:none;cursor:pointer;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink)}
+@media (max-width:760px){nav ul{display:none}}
+
+/* hero: one dusk-to-night world in both themes; blurred city behind, a slow sharp spot that follows the cursor */
+.hero{position:relative;overflow:hidden;isolation:isolate;
+  --ink:#F3F2FA; --muted:#C9C9DE; --line:rgba(255,255,255,.2); --surface:rgba(255,255,255,.08); --paper:#11132E; --ember:#F49A6A; --navy:#F3F2FA;
+  color:var(--ink);background:#11132E}
+.bg{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.scene{position:absolute;inset:0;opacity:0;transition:opacity 2.6s ease}
+.scene.on{opacity:1}
+.scene img,.scene video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:drift 26s ease-in-out infinite alternate}
+.scene .sharp{-webkit-mask-image:radial-gradient(circle var(--r,200px) at var(--mx,70%) var(--my,42%),#000 25%,transparent 100%);mask-image:radial-gradient(circle var(--r,200px) at var(--mx,70%) var(--my,42%),#000 25%,transparent 100%)}
+@keyframes drift{to{transform:scale(1.13) translate3d(-1.2%,-.8%,0)}}
+.shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,16,46,.9) 0%,rgba(14,16,46,.66) 42%,rgba(14,16,46,.22) 100%),linear-gradient(0deg,rgba(14,16,46,.6),transparent 35%)}
+.cap{position:absolute;top:.9rem;right:max(16px,env(safe-area-inset-right,0px));font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.62);transition:opacity .8s}
+.port{display:none}
+@media (max-width:760px){.land{display:none}.port{display:block}.shade{background:linear-gradient(180deg,rgba(14,16,46,.86) 0%,rgba(14,16,46,.7) 60%,rgba(14,16,46,.5) 100%)}.cap{display:none}}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(1.5rem,5vw,4rem);align-items:end;padding-block:clamp(2.2rem,6vw,4.5rem) 0;position:relative}
+.hero .badge{background:#FCFBFE;color:#171A3A;border-color:transparent}
+.hero .badge small{color:#5D5F7C}
+.hero .bridge{backdrop-filter:blur(6px)}
+.hero-text{min-width:0;padding-bottom:clamp(1.5rem,4vw,3rem)}
+.hero h1{font-size:var(--s7);font-weight:600;letter-spacing:-.015em;line-height:1;margin-block:.9rem 1.2rem}
+.hero h1 .b{font-style:italic}
+.hero h1 .b{position:relative;white-space:nowrap;color:var(--ember)}
+.hero h1 .b::after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:.14em;border-radius:2px;background:var(--ember);opacity:.25;transform-origin:left;animation:span 1.2s .3s cubic-bezier(.2,.7,.2,1) both}
+@keyframes span{from{transform:scaleX(0)}}
+.hero .lede{font-size:1.08rem;color:var(--muted)}
+.bridges{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s4)}
+.bridge{display:inline-flex;align-items:center;gap:.45rem;font:500 var(--s2)/1 var(--body);padding:.5rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+.bridge svg{width:26px;height:10px;flex:none}
+.bridge svg path{fill:none;stroke:var(--ember);stroke-width:1.6}
+.cta-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:var(--s5)}
+
+.portrait{position:relative;justify-self:end;width:min(100%,400px);min-width:0}
+.arch{position:relative;border-radius:999px 999px 0 0;overflow:hidden;background:var(--studio);aspect-ratio:613/800;max-width:100%}
+.arch img{width:100%;height:100%;object-fit:cover}
+.arch::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 10%,transparent)}
+.court{position:absolute;inset:auto -14% -6% -14%;width:128%;max-width:none;z-index:-1;opacity:.9}
+.court path,.court circle{fill:none;stroke:var(--line);stroke-width:2}
+.badge{position:absolute;left:-1.2rem;bottom:1.4rem;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.6rem .85rem;box-shadow:0 10px 30px -12px color-mix(in srgb,var(--ink) 35%,transparent)}
+.badge strong{display:block;font-family:var(--display);font-weight:700;font-size:1.3rem;line-height:1.05}
+.badge small{color:var(--muted);font-size:var(--s1)}
+
+/* lens */
+.lens{margin-top:var(--s5);display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
+.lens .eyebrow{margin-right:.35rem}
+.lens button{font:500 var(--s2)/1 var(--body);padding:.55rem .9rem;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.lens button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--paper)}
+
+/* now strip */
+.now{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
+.now .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.row{display:grid;grid-template-columns:auto 1fr;gap:.7rem;padding:1.1rem 1rem 1.1rem 0;transition:opacity .25s;min-width:0}
+.row+.row{padding-left:1rem;border-left:1px solid var(--line)}
+.dot{width:9px;height:9px;border-radius:50%;margin-top:.45rem;background:var(--navy);box-shadow:0 0 0 4px var(--navy-soft);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px var(--navy-soft)}}
+.row strong{display:block;font-weight:600;line-height:1.3;font-size:.95rem}
+.row small{color:var(--muted);font-size:var(--s2)}
+.row .since{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top:.15rem}
+@media (max-width:900px){.now .wrap{grid-template-columns:1fr 1fr}.row:nth-child(3){padding-left:0;border-left:0}.row:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:520px){.now .wrap{grid-template-columns:1fr}.row,.row+.row{padding-left:0;border-left:0}.row+.row{border-top:1px solid var(--line)}}
+
+/* sections */
+section.band{padding-block:clamp(3rem,7vw,5rem);border-bottom:1px solid var(--line)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:var(--s3);margin-bottom:var(--s6)}
+.sec-head p{color:var(--muted)}
+
+/* skills */
+.skills{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{font-size:var(--s2);padding:.5rem .85rem;border-radius:8px;border:1px solid var(--line);background:var(--surface);transition:opacity .25s,border-color .25s,background .25s}
+.chip.on{border-color:var(--navy);background:var(--navy-soft)}
+.dim{opacity:.28}
+
+/* feature win */
+.feature{display:grid;grid-template-columns:1fr 1fr;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:var(--s5);transition:opacity .3s}
+.feature>*{min-width:0}
+.feature figure{margin:0;position:relative;background:var(--wood)}
+.feature figure img{width:100%;height:100%;object-fit:cover;min-height:280px}
+.feature .body{padding:clamp(1.25rem,3vw,2.25rem);display:flex;flex-direction:column;gap:.2rem}
+.place{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--mono);font-size:var(--s1);letter-spacing:.08em;text-transform:uppercase;color:var(--ember);background:var(--ember-soft);padding:.35rem .65rem;border-radius:6px;width:max-content;max-width:100%}
+.feature h3{font-family:var(--display);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:600;margin-block:.7rem .5rem;line-height:1.05}
+.feature .q{font-family:var(--display);font-style:italic;font-weight:600;font-size:1.35rem;line-height:1.2;border-left:3px solid var(--ember);padding-left:.9rem;margin-block:var(--s3)}
+.roles{display:flex;gap:.35rem;margin-block:var(--s3) .6rem;flex-wrap:wrap}
+.roles button{font:500 var(--s2)/1 var(--body);padding:.55rem .8rem;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.roles button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.role-copy{min-height:3.2em;color:var(--muted);margin-bottom:var(--s3)}
+.boxscore{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:var(--s2);font-variant-numeric:tabular-nums}
+.boxscore caption{text-align:left;font-size:var(--s1);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-bottom:.5rem}
+.boxscore th,.boxscore td{padding:.5rem .4rem;border-top:1px solid var(--line);text-align:left;vertical-align:middle}
+.boxscore th{font-weight:500;color:var(--muted);width:44%}
+.meter{height:7px;border-radius:4px;background:var(--line);overflow:hidden;margin-top:.35rem}
+.meter i{display:block;height:100%;background:var(--navy);width:var(--w);transform-origin:left}
+.js-anim .bar-row,.js-anim .bar-row .fl{transition:none}
+.bar-row .fl{transform-origin:left center}
+.upsets{display:flex;gap:4px;margin-top:.35rem}
+.upsets i{width:13px;height:13px;border-radius:50%;border:2px solid var(--ember)}
+.upsets i.hit{background:var(--ember)}
+.more{font-size:var(--s2);font-weight:600;text-decoration-color:var(--ember);text-underline-offset:3px}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:var(--s3)}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .3s}
+.card:hover{transform:translateY(-3px)}
+.card .ph{aspect-ratio:16/10;overflow:hidden;background:var(--studio)}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.card:hover .ph img{transform:scale(1.04)}
+.card .in{display:flex;flex-direction:column;gap:.55rem;padding:var(--s4);flex:1}
+.card p{color:var(--muted);font-size:.95rem}
+.card .meta{display:flex;justify-content:space-between;gap:.5rem;align-items:center;font-family:var(--mono);font-size:var(--s1);color:var(--muted)}
+.stat{display:flex;gap:1rem;font-family:var(--mono);font-size:var(--s2);font-variant-numeric:tabular-nums}
+.stat b{font-size:1.15rem;color:var(--navy);font-weight:500}
+.stat span{color:var(--muted)}
+.tags{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:auto;padding-top:.4rem}
+.tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .5rem;border-radius:4px;background:var(--navy-soft);color:var(--navy)}
+.tag.fin{background:var(--ember-soft);color:var(--ember)}
+.wip{color:var(--ember)}
+.card.gone{display:none}
+.empty{color:var(--muted);font-style:italic}
+
+/* african thesis */
+.th-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:var(--s5);margin-bottom:var(--s6)}
+.th-head>div{min-width:0}
+.th-head h2{font-size:clamp(2.6rem,5.6vw,4rem);margin-block:.5rem .7rem}
+.th-sub{color:var(--muted)}
+.th-totals{display:grid;grid-template-columns:repeat(4,auto);gap:0;margin:0;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.th-totals div{padding:.7rem 1rem;border-left:1px solid var(--line)}
+.th-totals div:first-child{border-left:0}
+.th-totals dt{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.th-totals dd{margin:0;font-family:var(--display);font-weight:700;font-size:2.1rem;font-variant-numeric:lining-nums tabular-nums;line-height:1.05}
+.th-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(1.5rem,4vw,3rem)}
+.th-grid>*{min-width:0}
+.th-chart{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(1rem,2.5vw,1.6rem)}
+.th-controls{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.8rem;margin-bottom:1.1rem}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;padding:3px;gap:2px;background:var(--paper)}
+.seg button{font:500 var(--s2)/1 var(--body);padding:.55rem .8rem;border-radius:7px;border:0;background:transparent;color:var(--muted);cursor:pointer;transition:background .25s,color .25s}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.legend{display:flex;gap:.9rem;font-size:var(--s1);color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:.35rem}
+.legend i{width:10px;height:10px;border-radius:3px}
+.k-priv{background:var(--navy)}
+.k-multi{background:var(--ember)}
+.bars{position:relative;--rh:38px}
+.bar-row{position:absolute;left:0;right:0;height:var(--rh);display:grid;grid-template-columns:minmax(0,11.5rem) 1fr 1.6rem;align-items:center;gap:.7rem;transition:transform .7s cubic-bezier(.2,.75,.2,1)}
+.bar-row .nm{font-size:var(--s2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-row .tr{height:12px;border-radius:6px;background:var(--line);position:relative;overflow:hidden;background-image:repeating-linear-gradient(90deg,transparent 0 calc(20% - 1px),var(--paper) calc(20% - 1px) 20%)}
+.bar-row .fl{position:absolute;inset:0 auto 0 0;border-radius:6px;background:var(--navy);transition:width .7s cubic-bezier(.2,.75,.2,1)}
+.bar-row.multi .fl{background:var(--ember)}
+.bar-row .v{font-family:var(--mono);font-size:var(--s2);font-variant-numeric:tabular-nums;text-align:right}
+.bar-row.zero .v{color:var(--ember)}
+.axis{display:flex;justify-content:space-between;margin:.4rem 2.3rem 0 calc(11.5rem + .7rem);font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.th-note{font-size:var(--s1);color:var(--muted);margin-top:.9rem}
+.th-side{display:flex;flex-direction:column;gap:var(--s3)}
+.th-side p{color:var(--muted)}
+.th-side strong{color:var(--ink);font-weight:600}
+.method{border-top:1px solid var(--line);padding-top:.8rem}
+.method summary{cursor:pointer;font-weight:600;font-size:var(--s2)}
+.method p{margin-top:.5rem;font-size:.92rem}
+.arc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.35rem .9rem;border-top:1px solid var(--line);padding-top:.9rem}
+.arc li{display:flex;gap:.5rem;font-size:var(--s2);color:var(--muted)}
+.arc li span{font-family:var(--mono);font-size:var(--s1);color:var(--muted)}
+.arc li.done{color:var(--ink);font-weight:600}
+.arc li.done span{color:var(--ember)}
+@media (max-width:900px){.th-grid{grid-template-columns:1fr}}
+@media (max-width:560px){
+  .bars{--rh:44px}
+  .bar-row{grid-template-columns:minmax(0,7.5rem) 1fr 1.4rem;gap:.5rem}
+  .axis{margin-left:calc(7.5rem + .5rem);margin-right:1.9rem}
+  .th-totals{grid-template-columns:repeat(2,1fr);width:100%}
+  .th-totals div:nth-child(3){border-left:0}
+  .th-totals div:nth-child(n+3){border-top:1px solid var(--line)}
+  .arc{grid-template-columns:1fr}
+}
+
+/* on stage */
+.stage{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:center;transition:opacity .3s}
+.stage>*{min-width:0}
+.collage{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:.6rem}
+.collage img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.collage .a{grid-row:1/3;aspect-ratio:3/4}
+.collage .a img{object-position:58% 50%}
+.collage .b{aspect-ratio:4/3}
+.collage .b img{object-position:50% 40%}
+.collage .c{display:flex;flex-direction:column;justify-content:center;gap:.3rem;padding:1rem;border-radius:12px;background:var(--ember-soft)}
+.collage .c strong{font-family:var(--display);font-weight:700;font-size:2rem;line-height:1;color:var(--ember)}
+.collage .c small{color:var(--muted);font-size:var(--s1)}
+.stage blockquote{margin:var(--s4) 0;font-family:var(--display);font-style:italic;font-weight:600;font-size:clamp(1.7rem,3.2vw,2.3rem);line-height:1.15}
+.stage blockquote::before{content:"\201C";color:var(--ember)}
+.stage blockquote::after{content:"\201D";color:var(--ember)}
+.stage p{color:var(--muted)}
+
+/* path */
+.path-wrap{display:grid;grid-template-columns:230px 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:center}
+.path-wrap>*{min-width:0}
+.court-shot{margin:0}
+.court-shot img{width:100%;aspect-ratio:664/903;object-fit:cover;border-radius:999px 999px 14px 14px}
+.court-shot figcaption{font-size:var(--s1);color:var(--muted);margin-top:.6rem;font-family:var(--mono)}
+@media (max-width:980px){.path-wrap{grid-template-columns:1fr}.court-shot{max-width:260px}}
+.path{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4)}
+.path::before{content:"";position:absolute;left:6px;right:6px;top:7px;height:2px;background:linear-gradient(90deg,var(--navy),var(--ember))}
+.stop{position:relative;padding-top:2rem;min-width:0}
+.stop::before{content:"";position:absolute;top:0;left:0;width:16px;height:16px;border-radius:50%;background:var(--paper);border:3px solid var(--navy)}
+.stop.next::before{border-color:var(--ember);border-style:dashed}
+.stop .city{font-family:var(--display);font-weight:600;font-size:1.9rem;line-height:1.1}
+.stop .yr{font-family:var(--mono);font-size:var(--s1);color:var(--muted)}
+.stop p{color:var(--muted);font-size:.95rem;margin-top:.4rem}
+@media (max-width:820px){
+  .path{grid-template-columns:1fr;gap:var(--s5);padding-left:1.8rem}
+  .path::before{left:7px;right:auto;top:6px;bottom:6px;width:2px;height:auto;background:linear-gradient(180deg,var(--navy),var(--ember))}
+  .stop{padding-top:0}.stop::before{left:-1.8rem;top:.35rem}
+}
+
+/* ask */
+.ask{display:grid;grid-template-columns:1fr 1.3fr;gap:var(--s6)}
+.ask>*{min-width:0}
+.qs{display:flex;flex-direction:column;gap:.5rem}
+.qs button{text-align:left;font:500 .95rem/1.4 var(--body);padding:.8rem 1rem;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:border-color .2s,transform .2s}
+.qs button:hover{border-color:var(--navy);transform:translateX(3px)}
+.qs button[aria-pressed="true"]{border-color:var(--navy);background:var(--navy-soft)}
+.chat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:var(--s4);display:flex;flex-direction:column;gap:.8rem;min-height:300px}
+.chat-head{display:flex;align-items:center;gap:.6rem;padding-bottom:.8rem;border-bottom:1px solid var(--line)}
+.avatar{width:36px;height:36px;border-radius:50%;overflow:hidden;background:var(--studio);flex:none}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.chat-head small{display:block;color:var(--muted);font-size:var(--s1)}
+.log{display:flex;flex-direction:column;gap:.8rem}
+.bubble{max-width:88%;padding:.75rem 1rem;border-radius:14px;font-size:.95rem}
+.bubble.me{align-self:flex-end;background:var(--ink);color:var(--paper);border-bottom-right-radius:4px}
+.bubble.him{align-self:flex-start;background:var(--navy-soft);border-bottom-left-radius:4px}
+.note{font-size:var(--s1);color:var(--muted);margin-top:auto;font-family:var(--mono)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1.4fr 1fr;gap:var(--s6);align-items:center}
+.contact h2{font-size:clamp(2rem,5vw,3.2rem);margin-top:.6rem}
+.contact>*{min-width:0}
+.reach{display:grid;gap:.8rem}
+.reach .btn{justify-content:center}
+.copy{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;padding:.75rem 1rem;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.copy code{font-family:var(--mono);font-size:var(--s2);user-select:all;overflow-wrap:anywhere;flex:1;min-width:0}
+.copy button{font:600 var(--s1)/1 var(--body);padding:.5rem .7rem;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+footer{padding-block:var(--s5);color:var(--muted);font-size:var(--s2)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s2)}
+footer .mono{font-family:var(--mono);font-size:var(--s1)}
+
+@media (max-width:860px){
+  .hero .wrap,.feature,.ask,.contact,.stage{grid-template-columns:1fr}
+  .portrait{justify-self:center;width:min(78%,340px)}
+  .badge{left:-.6rem}
+  .feature figure img{min-height:0;aspect-ratio:739/524}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+    <a class="mark" href="#top">Jonathan Kasule<span>.</span></a>
+    <nav aria-label="Sections"><ul>
+      <li><a href="#wins">Wins</a></li>
+      <li><a href="#thesis">Research</a></li>
+      <li><a href="#stage">On stage</a></li>
+      <li><a href="#path">Path</a></li>
+      <li><a href="#ask">Ask</a></li>
+    </ul></nav>
+    <a class="btn" href="https://calendar.app.google/n6YieH3ii2R3nRpr7" target="_blank" rel="noopener">Book a chat</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="bg" aria-hidden="true">
+      <div class="scene on" data-land="Nairobi at dusk" data-port="Kampala at sunset">
+        <img class="land" src="photos/bg-ea-land-blur.jpg" alt=""><img class="land sharp" src="photos/bg-ea-land.jpg" alt="">
+        <img class="port" src="photos/bg-ea-port-blur.jpg" alt=""><img class="port sharp" src="photos/bg-ea-port.jpg" alt="">
+      </div>
+      <div class="scene" data-land="Flying into New York" data-port="Flying into New York">
+        <video class="vblur" src="photos/flight-blur.mp4" muted playsinline preload="auto"></video>
+        <video class="sharp" src="photos/flight.mp4" muted playsinline preload="auto"></video>
+      </div>
+      <div class="scene" data-land="Lower Manhattan at night" data-port="George Washington Bridge">
+        <img class="land" src="photos/bg-ny-land-blur.jpg" alt=""><img class="land sharp" src="photos/bg-ny-land.jpg" alt="">
+        <img class="port" src="photos/bg-ny-port-blur.jpg" alt=""><img class="port sharp" src="photos/bg-ny-port.jpg" alt="">
+      </div>
+      <div class="shade"></div>
+      <div class="cap" id="cap">Nairobi at dusk</div>
+    </div>
+    <div class="wrap">
+      <div class="hero-text">
+        <div class="eyebrow">Fordham MSBA · CFA Level II candidate · New York and Kampala</div>
+        <h1>Jonathan <span class="b">builds bridges</span> between finance, analytics and AI.</h1>
+        <p class="lede">From appraising public infrastructure in Kampala to building capital-project indicators for New York City, he turns complex opportunities into actionable insights. Fordham MSBA, December 2026.</p>
+        <div class="bridges" aria-label="Bridges">
+          <span class="bridge">Finance <svg viewBox="0 0 26 10" aria-hidden="true"><path d="M1 9 Q13 -3 25 9"/></svg> AI</span>
+          <span class="bridge">Sport <svg viewBox="0 0 26 10" aria-hidden="true"><path d="M1 9 Q13 -3 25 9"/></svg> Analytics</span>
+          <span class="bridge">Kampala <svg viewBox="0 0 26 10" aria-hidden="true"><path d="M1 9 Q13 -3 25 9"/></svg> New York</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn" href="https://calendar.app.google/n6YieH3ii2R3nRpr7" target="_blank" rel="noopener">Book a conversation</a>
+          <a class="btn ghost" href="#wins">See the work</a>
+        </div>
+        <div class="lens" role="group" aria-label="Filter the page by lens">
+          <span class="eyebrow">View as</span>
+          <button type="button" id="lens-all" data-l="all" aria-pressed="true">Everything</button>
+          <button type="button" id="lens-fin" data-l="fin" aria-pressed="false">Finance</button>
+          <button type="button" id="lens-ana" data-l="ana" aria-pressed="false">Analytics</button>
+          <button type="button" id="lens-ai" data-l="ai" aria-pressed="false">AI</button>
+        </div>
+      </div>
+      <div class="portrait">
+        <svg class="court" viewBox="0 0 600 300" aria-hidden="true"><path d="M20 300 V150 a280 280 0 0 1 560 0 V300"/><circle cx="300" cy="300" r="90"/></svg>
+        <div class="arch"><img src="photos/portrait.jpg" alt="Jonathan Kasule in a navy suit" width="613" height="800"></div>
+        <div class="badge"><strong>1st of both squads</strong><small>Top Gun Investors, Q4 2025</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="now" id="work" aria-label="What he's doing now">
+    <div class="wrap">
+      <div class="row" data-lens="ana"><span class="dot"></span>
+        <div><strong>Data Analytics &amp; PM Intern</strong><small>NYC Mayor's Office of Operations</small><div class="since">since Aug 2026</div></div></div>
+      <div class="row" data-lens="fin"><span class="dot"></span>
+        <div><strong>Investment Associate (Lead)</strong><small>CapitalSavvy Ltd, Kampala</small><div class="since">since Jul 2024</div></div></div>
+      <div class="row" data-lens="fin"><span class="dot"></span>
+        <div><strong>Venture Fellow, Cohort 11</strong><small>Venture Cooperative</small><div class="since">deal sourcing</div></div></div>
+      <div class="row" data-lens="ana ai"><span class="dot"></span>
+        <div><strong>MSBA candidate</strong><small>Fordham Gabelli</small><div class="since">graduating Dec 2026 · FMVA</div></div></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head"><h2>Toolkit</h2><p>Pick a lens above to see which side of the work each skill serves.</p></div>
+      <div class="skills">
+        <span class="chip" data-lens="fin">Financial modeling</span>
+        <span class="chip" data-lens="fin">DCF valuation</span>
+        <span class="chip" data-lens="fin">Investment research</span>
+        <span class="chip" data-lens="fin">Deal sourcing</span>
+        <span class="chip" data-lens="fin">Credit and risk analysis</span>
+        <span class="chip" data-lens="ana">Python</span>
+        <span class="chip" data-lens="ana">SQL</span>
+        <span class="chip" data-lens="ana">Power BI</span>
+        <span class="chip" data-lens="ana">Tableau</span>
+        <span class="chip" data-lens="ana ai">Predictive analytics</span>
+        <span class="chip" data-lens="ana ai">Machine learning</span>
+        <span class="chip" data-lens="ai">Agentic AI design</span>
+        <span class="chip" data-lens="ai">Human-in-the-loop guardrails</span>
+        <span class="chip" data-lens="ai">NLP</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="wins">
+    <div class="wrap">
+      <div class="sec-head"><h2>Wins and projects</h2><p>Team results first. The numbers are the ones the teams published.</p></div>
+
+      <article class="feature" data-lens="ana ai">
+        <figure><img src="photos/datacrunch.jpg" alt="Team CourtSide Analytics with judges and their poster at Fordham" width="739" height="524" loading="lazy"></figure>
+        <div class="body">
+          <span class="place">3rd place · March 2026</span>
+          <h3>March Data Crunch Madness, Team CourtSide Analytics</h3>
+          <p>Fordham's 13th annual competition, sponsored by Deloitte. The team built a three-part prediction system and gave each part a role.</p>
+          <p class="q">Not just who is better, but which teams are structurally fragile when it matters most.</p>
+          <div class="roles" role="tablist" aria-label="System roles">
+            <button type="button" role="tab" id="role-stat" aria-selected="true" data-r="0">The Statistician</button>
+            <button type="button" role="tab" id="role-skep" aria-selected="false" data-r="1">The Skeptic</button>
+            <button type="button" role="tab" id="role-story" aria-selected="false" data-r="2">The Storyteller</button>
+          </div>
+          <p class="role-copy" id="role-copy" aria-live="polite">An ensemble model covering every possible tournament matchup.</p>
+          <table class="boxscore">
+            <caption>Box score through Round 2</caption>
+            <tr><th>Accuracy</th><td>70.8%<div class="meter"><i style="--w:70.8%"></i></div></td></tr>
+            <tr><th>Upset recall</th><td>58.3%<div class="meter"><i style="--w:58.3%"></i></div></td></tr>
+            <tr><th>Seed 5–12 "Blind Zone"</th><td>5 of 8 upsets<div class="upsets" aria-hidden="true"><i class="hit"></i><i class="hit"></i><i class="hit"></i><i class="hit"></i><i class="hit"></i><i></i><i></i><i></i></div></td></tr>
+            <tr><th>Features</th><td>60+ across 8 families → 25</td></tr>
+          </table>
+          <a class="more" style="margin-top:var(--s3)" href="https://www.linkedin.com/feed/update/urn:li:activity:7444953675292151808/" target="_blank" rel="noopener">Read the post</a>
+        </div>
+      </article>
+
+      <div class="cards" id="cards">
+        <article class="card" data-lens="fin">
+          <div class="ph"><img src="photos/topgun.jpg" alt="Top Gun Investors student spotlight card" width="739" height="412" loading="lazy"></div>
+          <div class="in">
+            <div class="meta"><span>Q4 2025</span><span class="place">1st individual</span></div>
+            <h3>Top Gun Investors League</h3>
+            <p>MBA vs. Masters challenge. He ran a stock portfolio through a quarter of AI-driven volatility and finished first across both squads.</p>
+            <div class="stat"><div><b>+7.80%</b><br><span>portfolio</span></div><div><b>+1.34%</b><br><span>S&amp;P 100</span></div></div>
+            <a class="more" href="https://www.linkedin.com/feed/update/urn:li:activity:7416562425879142400/" target="_blank" rel="noopener">Read the post</a>
+            <div class="tags"><span class="tag fin">Finance</span></div>
+          </div>
+        </article>
+        <article class="card" data-lens="fin ana">
+          <div class="ph"><img src="photos/casecomp.jpg" alt="Case competition team with the judges" width="739" height="549" loading="lazy" style="object-position:50% 60%"></div>
+          <div class="in">
+            <div class="meta"><span>Fall 2025</span><span class="place">3rd place</span></div>
+            <h3>Fordham Consulting Case Competition</h3>
+            <p>ESPN's direction: streaming against a declining cable business. In 3 weeks the team built a DCF, scored 3 options on 8 criteria and stress-tested 6 variables before recommending a phased hybrid strategy.</p>
+            <a class="more" href="https://www.linkedin.com/feed/update/urn:li:activity:7404009098020618241/" target="_blank" rel="noopener">Read the post</a>
+            <div class="tags"><span class="tag fin">Finance</span><span class="tag">Analytics</span></div>
+          </div>
+        </article>
+        <article class="card" data-lens="ana">
+          <div class="in">
+            <div class="meta"><span>Since Aug 2026</span><span class="wip">Ongoing</span></div>
+            <h3>NYC capital projects indicators</h3>
+            <p>Combines NYC Open Data project datasets into a project typology and performance indicators (duration, schedule change, budget variance, delay), shown in Tableau and Power BI.</p>
+            <div class="tags"><span class="tag">Analytics</span></div>
+          </div>
+        </article>
+        <article class="card" data-lens="ai">
+          <div class="in">
+            <div class="meta"><span>Spring 2026</span><span>Workshop</span></div>
+            <h3>Agentic AI at Microsoft NYC</h3>
+            <p>A design-thinking workshop with the Fordham AI Society. His takeaway: the human in the loop is a necessity, not a limitation.</p>
+            <div class="tags"><span class="tag">AI</span></div>
+          </div>
+        </article>
+        <article class="card" data-lens="fin ana">
+          <div class="in">
+            <div class="meta"><span>In progress</span><span class="wip">Research</span></div>
+            <h3>Sports finance feasibility</h3>
+            <p>A long-horizon feasibility model for a basketball team in East Africa.</p>
+            <div class="tags"><span class="tag fin">Finance</span><span class="tag">Analytics</span></div>
+          </div>
+        </article>
+        <article class="card" data-lens="ai">
+          <div class="in">
+            <div class="meta"><span>In progress</span><span class="wip">Build</span></div>
+            <h3>Personal AI operations suite</h3>
+            <p>Specialist agents with guardrails, privacy checks and human approval at every outgoing step. This site is built and updated by it.</p>
+            <div class="tags"><span class="tag">AI</span></div>
+          </div>
+        </article>
+      </div>
+      <p class="empty" id="empty" hidden>Nothing tagged for this lens yet.</p>
+    </div>
+  </section>
+
+  <section class="band thesis" id="thesis">
+    <div class="wrap" data-lens="fin ana ai">
+      <div class="th-head">
+        <div>
+          <div class="eyebrow">Research · Week 1 of 6 · July 2026</div>
+          <h2>The African Thesis</h2>
+          <p class="th-sub">What global investors say about Africa, and what the data actually shows. Ten institutional outlooks, scored sentence by sentence with NLP.</p>
+        </div>
+        <dl class="th-totals" aria-label="Week 1 totals">
+          <div><dt>Opportunity</dt><dd>27</dd></div>
+          <div><dt>Risk</dt><dd>19</dd></div>
+          <div><dt>Mispricing</dt><dd>24</dd></div>
+          <div><dt>Outlooks</dt><dd>10</dd></div>
+        </dl>
+      </div>
+
+      <div class="th-grid">
+        <div class="th-chart">
+          <div class="th-controls">
+            <div class="seg" role="group" aria-label="Signal to rank by">
+              <button type="button" id="sig-opp" data-k="opp" aria-pressed="true">Opportunity</button>
+              <button type="button" id="sig-risk" data-k="risk" aria-pressed="false">Risk</button>
+              <button type="button" id="sig-mis" data-k="mis" aria-pressed="false">Mispricing</button>
+            </div>
+            <div class="legend"><span><i class="k-priv"></i>Private capital</span><span><i class="k-multi"></i>Multilateral</span></div>
+          </div>
+          <div class="bars" id="bars" role="list" aria-label="Signal counts by institution"></div>
+          <div class="axis" aria-hidden="true"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+          <p class="th-note">Counts of sentences matching each signal taxonomy. Week 1 signal counts, not a forecast and not investment advice.</p>
+        </div>
+
+        <div class="th-side">
+          <h3>What Week 1 found</h3>
+          <p><strong>Private capital is more bullish than the multilaterals.</strong> Morgan Stanley and BlackRock lead on opportunity language, while both IMF outlooks scored zero opportunity signals. Different mandates and time horizons, read side by side.</p>
+          <p><strong>FX and governance drive the risk story.</strong> Infrastructure gaps and debt sustainability follow. South Africa gets the most mentions, but East Africa appears more often in forward-looking sections.</p>
+          <details class="method">
+            <summary>Method</summary>
+            <p>Text extracted with pdfplumber, cleaned with regex, then spaCy pulled every sentence naming one of 23 countries or 9 regions. Sentences were scored against three keyword taxonomies (10 opportunity, 10 risk, 28 mispricing terms), with FinBERT sentiment as an independent check. Next: a fine-tuned Longformer on 4,096-token chunks.</p>
+          </details>
+          <ol class="arc" aria-label="Six-week series">
+            <li class="done"><span>01</span>How Wall Street Sees Africa</li>
+            <li><span>02</span>Bulls, Bears &amp; Blind Spots</li>
+            <li><span>03</span>What Africa Thinks of Itself</li>
+            <li><span>04</span>The Government Bet</li>
+            <li><span>05</span>Lost in Translation</li>
+            <li><span>06</span>The Mispricing Map</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="stage">
+    <div class="wrap stage" data-lens="fin ai">
+      <div class="collage">
+        <div class="a"><img src="photos/summit-stage.jpg" alt="Jonathan speaking on stage at the Kampala Blockchain Summit" width="1400" height="932" loading="lazy"></div>
+        <div class="b"><img src="photos/summit-panel.jpg" alt="Jonathan on a panel at the Kampala Blockchain Summit 2024" width="1400" height="932" loading="lazy"></div>
+        <div class="c"><strong>Nov 2024</strong><small>Kampala Blockchain Summit</small></div>
+      </div>
+      <div>
+        <div class="eyebrow">On stage</div>
+        <h2 style="margin-top:.6rem">Mobile money, at the speed of the internet</h2>
+        <blockquote>Imagine sending as little as 10 shillings.</blockquote>
+        <p>A panelist at the Kampala Blockchain Summit 2024, "Unlocking Opportunities in Africa Through Blockchain." He made the case that microtransactions on mobile money could open new business models and widen financial inclusion across Uganda.</p>
+        <p style="margin-top:var(--s3)"><a class="more" href="https://www.pulse.ug/story/how-blockchain-can-transform-ugandas-mobile-money-business-2024112007540553710" target="_blank" rel="noopener">Read the coverage in Pulse Uganda</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="path">
+    <div class="wrap">
+      <div class="sec-head"><h2>The path</h2><p>Three cities, one steady focus on financial inclusion in East Africa.</p></div>
+      <div class="path-wrap">
+      <figure class="court-shot">
+        <img src="photos/basketball.jpg" alt="Jonathan rising for a jump shot in a basketball game" width="664" height="903" loading="lazy">
+        <figcaption>Former university team captain. Sport is where the analytics started.</figcaption>
+      </figure>
+      <div class="path">
+        <div class="stop"><div class="yr">2018–2022</div><div class="city">Nairobi</div>
+          <p>B.Com in Finance &amp; Management Science at Strathmore University. Dean's List 2020–21 and captain of the men's basketball team.</p></div>
+        <div class="stop"><div class="yr">After 2022</div><div class="city">Kampala</div>
+          <p>Credit and risk analytics at a consumer-finance platform, a finance internship at an advisory firm, and a seat on the Blockchain Summit stage.</p></div>
+        <div class="stop"><div class="yr">2024–now</div><div class="city">Kampala + NYC</div>
+          <p>Investment Associate at CapitalSavvy, appraising public infrastructure, then the Fordham MSBA and the Mayor's Office of Operations.</p></div>
+        <div class="stop next"><div class="yr">Dec 2026</div><div class="city">Next</div>
+          <p>Graduating and looking for roles where finance and analytics meet.</p></div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="ask">
+    <div class="wrap ask">
+      <div>
+        <div class="sec-head" style="margin-bottom:var(--s4)"><h2>Ask Jonathan's agent</h2></div>
+        <div class="qs" id="qs"></div>
+      </div>
+      <div class="chat" aria-live="polite">
+        <div class="chat-head"><span class="avatar"><img src="photos/portrait.jpg" alt="" width="36" height="36"></span><div><strong>Jonathan's agent</strong><small>Answers from his approved profile</small></div></div>
+        <div class="log" id="log"></div>
+        <div class="note">Answers come from Jonathan's own profile. For anything else, book a conversation.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap contact">
+      <div>
+        <div class="eyebrow">Let's talk</div>
+        <h2>Finance, analytics, African markets or the MSBA. Bring a question.</h2>
+      </div>
+      <div class="reach">
+        <a class="btn" href="https://calendar.app.google/n6YieH3ii2R3nRpr7" target="_blank" rel="noopener">Book a conversation</a>
+        <div class="copy"><code id="mail">gyewavajonathan@gmail.com</code><button type="button" id="copy-btn">Copy</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <span>English · Swahili · Luganda</span>
+  <span class="mono">Built from the brand wiki · last sync 2026-11-01</span>
+</div></footer>
+
+<script>
+(function(){
+  var lens='all';
+  try{lens=localStorage.getItem('jk-lens')||'all'}catch(e){}
+  var btns=[].slice.call(document.querySelectorAll('.lens button'));
+  function apply(l){
+    lens=l;
+    try{localStorage.setItem('jk-lens',l)}catch(e){}
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+    document.querySelectorAll('[data-lens]').forEach(function(el){
+      var hit=l==='all'||el.dataset.lens.split(' ').indexOf(l)>-1;
+      if(el.classList.contains('card')){el.classList.toggle('gone',!hit)}
+      else{el.classList.toggle('dim',!hit)}
+      if(el.classList.contains('chip'))el.classList.toggle('on',hit&&l!=='all');
+    });
+    document.getElementById('empty').hidden=!!document.querySelector('.card:not(.gone)');
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.l)})});
+  apply(lens);
+
+  var roles=['An ensemble model covering every possible tournament matchup.',
+    'Six specialist models that flagged fragile favorites before the games.',
+    'Live momentum and injury signals that updated the picks as the tournament moved.'];
+  var tabs=[].slice.call(document.querySelectorAll('.roles button'));
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    tabs.forEach(function(x){x.setAttribute('aria-selected',x===t)});
+    document.getElementById('role-copy').textContent=roles[+t.dataset.r];
+  })});
+
+  var faq=[
+    ['What does he do?',"He's a data analytics and project management intern at the NYC Mayor's Office of Operations, a Venture Fellow in the Venture Cooperative, an Investment Associate at CapitalSavvy Ltd in Uganda, and an MSBA candidate at Fordham Gabelli."],
+    ['What kinds of problems does he like?','Ones where a structured model meets a messy real-world question: valuations, predictive models for decisions, and AI systems that keep a human in the loop.'],
+    ['Does he work on Africa-focused investing?','Yes. At CapitalSavvy he evaluates public-sector infrastructure projects in Uganda. His research covers investor sentiment toward African markets, sports finance and financial inclusion.'],
+    ['What is he studying?','A Master of Science in Business Analytics at Fordham Gabelli, graduating December 2026. He passed CFA Level I, is a Level II candidate, and holds the FMVA.'],
+    ['Can I hire him or work with him?','Book a conversation and describe what you have in mind. He comes prepared.']
+  ];
+  var qs=document.getElementById('qs'),log=document.getElementById('log');
+  var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches,timer;
+  function say(i,instant){
+    [].forEach.call(qs.children,function(b,j){b.setAttribute('aria-pressed',i===j)});
+    clearInterval(timer);
+    log.innerHTML='';
+    var me=document.createElement('div');me.className='bubble me';me.textContent=faq[i][0];log.appendChild(me);
+    var him=document.createElement('div');him.className='bubble him';log.appendChild(him);
+    var text=faq[i][1];
+    if(still||instant){him.textContent=text;return}
+    var n=0;timer=setInterval(function(){n+=3;him.textContent=text.slice(0,n);if(n>=text.length)clearInterval(timer)},14);
+  }
+  faq.forEach(function(f,i){
+    var b=document.createElement('button');b.type='button';b.id='q'+i;b.textContent=f[0];
+    b.addEventListener('click',function(){say(i)});qs.appendChild(b);
+  });
+  say(0,true);
+
+  // African Thesis: bars re-rank smoothly when the signal changes (ties keep report order)
+  var TH=[
+    ['Morgan Stanley EM Outlook',5,3,4,0],['BlackRock Midyear 2025',5,2,3,0],['Vanguard 2025 Outlook',4,1,4,0],
+    ['Vanguard 2026 Outlook',4,1,3,0],['Morgan Stanley EM Leaders',3,1,4,0],['Citi 2025 Annual Report',3,4,2,0],
+    ['RBC EM Outlook 2025',3,1,3,0],['World Bank SSA, Jun 2025',0,2,1,1],['IMF Regional Outlook, Oct 2025',0,3,0,1],
+    ['IMF Regional Outlook, Apr 2025',0,1,0,1]];
+  var KI={opp:1,risk:2,mis:3},barsEl=document.getElementById('bars'),rows=[];
+  TH.forEach(function(d){
+    var r=document.createElement('div');r.className='bar-row'+(d[4]?' multi':'');r.setAttribute('role','listitem');
+    r.innerHTML='<span class="nm"></span><span class="tr"><span class="fl"></span></span><span class="v"></span>';
+    r.querySelector('.nm').textContent=d[0];r.querySelector('.nm').title=d[0];
+    barsEl.appendChild(r);rows.push(r);
+  });
+  // anime.js is optional polish: without it (CDN blocked, reduced motion) every value simply sits at rest
+  var A=(!still&&window.anime)?window.anime:null;
+  if(A)barsEl.classList.add('js-anim');
+  function rank(k,instant){
+    var i=KI[k],rh=parseFloat(getComputedStyle(barsEl).getPropertyValue('--rh'))||38;
+    var order=TH.map(function(d,j){return j}).sort(function(a,b){return TH[b][i]-TH[a][i]||a-b});
+    barsEl.style.height=(TH.length*rh)+'px';
+    order.forEach(function(j,pos){
+      var r=rows[j],v=TH[j][i],fl=r.querySelector('.fl'),w=(v/5*100)+'%';
+      if(A&&!instant){
+        A.remove(r);A.remove(fl);
+        A({targets:r,translateY:pos*rh,duration:1100,easing:'spring(1, 80, 13, 0)'});
+        A({targets:fl,width:w,duration:900,delay:pos*35,easing:'easeOutExpo'});
+      }else{r.style.transform='translateY('+(pos*rh)+'px)';fl.style.width=w}
+      r.querySelector('.v').textContent=v;
+      r.classList.toggle('zero',v===0);
+      r.setAttribute('aria-label',TH[j][0]+': '+v);
+    });
+    [].forEach.call(document.querySelectorAll('.seg button'),function(b){b.setAttribute('aria-pressed',b.dataset.k===k)});
+  }
+  var sig='opp';
+  [].forEach.call(document.querySelectorAll('.seg button'),function(b){b.addEventListener('click',function(){sig=b.dataset.k;rank(sig)})});
+  window.addEventListener('resize',function(){rank(sig,true)});
+  rank(sig,true);
+
+  // first time a block scrolls into view: totals count up, meters and bars fill with a light stagger
+  function once(el,fn){
+    if(!A||!el||!('IntersectionObserver' in window))return;
+    var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){io.disconnect();fn()}},{threshold:.35});
+    io.observe(el);
+  }
+  once(document.querySelector('.th-totals'),function(){
+    [].forEach.call(document.querySelectorAll('.th-totals dd'),function(dd,n){
+      var end=+dd.textContent,o={v:0};
+      A({targets:o,v:end,round:1,duration:1400,delay:n*90,easing:'easeOutExpo',update:function(){dd.textContent=o.v}});
+    });
+  });
+  once(barsEl,function(){
+    A({targets:barsEl.querySelectorAll('.fl'),scaleX:[0,1],duration:1000,delay:A.stagger(45),easing:'easeOutExpo'});
+  });
+  once(document.querySelector('.boxscore'),function(){
+    A({targets:'.boxscore .meter i',scaleX:[0,1],duration:1100,delay:A.stagger(140),easing:'easeOutExpo'});
+    A({targets:'.boxscore .upsets i',scale:[0,1],duration:500,delay:A.stagger(70,{start:350}),easing:'easeOutBack'});
+  });
+
+  // hero: slow crossfade Kampala <-> New York, and a sharp spot that eases toward the cursor (drifts on its own otherwise)
+  var hero=document.querySelector('.hero'),scenes=[].slice.call(hero.querySelectorAll('.scene')),cap=document.getElementById('cap');
+  var narrow=window.matchMedia('(max-width: 760px)'),cur=0;
+  function caption(){cap.textContent=scenes[cur].dataset[narrow.matches?'port':'land']}
+  var last_=scenes.length-1;
+  if(still){scenes[0].classList.remove('on');scenes[last_].classList.add('on');cur=last_;caption();hero.style.setProperty('--r','0px')}
+  else{
+    // Kampala dusk -> the flight in (plays once, no loop seam) -> Manhattan night -> repeat
+    function show(i){
+      scenes[cur].classList.remove('on');cur=i;var s=scenes[cur];s.classList.add('on');
+      cap.style.opacity=0;setTimeout(function(){caption();cap.style.opacity=1},800);
+      var v=s.querySelectorAll('video');
+      if(v.length){
+        [].forEach.call(v,function(el){try{el.currentTime=0}catch(e){}var p=el.play();if(p&&p.catch)p.catch(function(){})});
+        var d=isFinite(v[1].duration)?v[1].duration:9.4;
+        setTimeout(next,Math.max(5000,d*1000-2400));
+      }else setTimeout(next,8000);
+    }
+    function next(){if(document.hidden){setTimeout(next,1000);return}show((cur+1)%scenes.length)}
+    var vids=hero.querySelectorAll('video');
+    if(vids.length===2)vids[1].addEventListener('timeupdate',function(){
+      if(Math.abs(vids[0].currentTime-vids[1].currentTime)>.12)vids[0].currentTime=vids[1].currentTime;
+    });
+    setTimeout(next,8000);
+    var x=.7,y=.42,tx=x,ty=y,last=-1e9,visible=true;
+    hero.addEventListener('pointermove',function(e){
+      if(e.pointerType!=='mouse')return;
+      var r=hero.getBoundingClientRect();tx=(e.clientX-r.left)/r.width;ty=(e.clientY-r.top)/r.height;last=performance.now();
+    });
+    if('IntersectionObserver' in window)new IntersectionObserver(function(en){visible=en[0].isIntersecting}).observe(hero);
+    (function tick(t){
+      if(visible){
+        if(t-last>2500){tx=.66+.2*Math.sin(t/8000);ty=.42+.16*Math.sin(t/6100)}
+        x+=(tx-x)*.05;y+=(ty-y)*.05;
+        hero.style.setProperty('--mx',(x*100).toFixed(2)+'%');hero.style.setProperty('--my',(y*100).toFixed(2)+'%');
+      }
+      requestAnimationFrame(tick);
+    })(0);
+  }
+  narrow.addEventListener&&narrow.addEventListener('change',caption);
+
+  document.getElementById('copy-btn').addEventListener('click',function(){
+    var btn=this,txt=document.getElementById('mail').textContent;
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected'}
+    try{navigator.clipboard.writeText(txt).then(function(){btn.textContent='Copied'},sel)}catch(e){sel()}
+  });
+})();
+</script>
+</body>
+</html>
