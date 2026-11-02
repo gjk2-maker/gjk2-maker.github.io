@@ -1,4 +1,4 @@
-# Jonathan Kasule
+# Gyewava Jonathan Kasule
 
 Personal site: https://gjk2-maker.github.io
 
