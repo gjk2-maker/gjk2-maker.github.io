@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How Wall Street Sees Africa · The African Thesis</title>
+<meta name="description" content="The African Thesis, Week 1: ten public institutional outlooks on Africa, scored sentence by sentence with NLP for opportunity, risk and mispricing language.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Wall Street Sees Africa · The African Thesis, Week 1">
+<meta property="og:description" content="Ten public institutional outlooks on Africa, scored sentence by sentence with NLP. Private capital reads the continent far more bullishly than the IMF and World Bank.">
+<meta property="og:url" content="https://gjk2-maker.github.io/african-thesis/week-01/">
+<meta property="og:image" content="https://gjk2-maker.github.io/photos/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2328327F'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='24' font-weight='700' fill='%23F3F2FA' text-anchor='middle'%3EGJK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script data-goatcounter="https://gjk2.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<style>
+/* Layout: one reading column for the argument, charts break out to a wider measure. Same palette and type as the home page */
+:root{
+  --paper:#F3F2F7; --surface:#FCFBFE; --ink:#171A3A; --muted:#5D5F7C; --line:#DCDBE8;
+  --navy:#28327F; --navy-soft:#E3E4F4; --ember:#C2501F; --ember-soft:#F7E3D7; --wood:#C09E77;
+  --display:"Cormorant Garamond", Garamond, "Times New Roman", serif;
+  --body:"Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --s1:.75rem; --s2:.875rem; --s3:1rem; --s4:1.2rem; --s5:1.75rem; --s6:clamp(2rem,4vw,2.8rem); --s7:clamp(2.6rem,6.5vw,4.6rem);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#10112A; --surface:#181A39; --ink:#ECEBF5; --muted:#A2A3C2; --line:#2B2D54;
+  --navy:#9EA7F3; --navy-soft:#232768; --ember:#F08A5B; --ember-soft:#3B2321; --wood:#A88762; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#10112A; --surface:#181A39; --ink:#ECEBF5; --muted:#A2A3C2; --line:#2B2D54;
+  --navy:#9EA7F3; --navy-soft:#232768; --ember:#F08A5B; --ember-soft:#3B2321; --wood:#A88762; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+[hidden]{display:none!important}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--s3);line-height:1.65;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.read{max-width:68ch}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.08}
+h1,h2{font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-variant-numeric:lining-nums}
+h2{font-size:var(--s6)}
+h3{font-size:var(--s4);font-weight:600;letter-spacing:-.01em;line-height:1.3}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:var(--s1);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding-block:.7rem}
+.mark{font-family:var(--display);font-weight:700;font-size:1.45rem;text-decoration:none}
+.mark span{color:var(--ember)}
+.back{font-size:var(--s2);color:var(--muted);text-decoration:none}
+.back:hover{color:var(--ink)}
+
+.top{padding-block:clamp(2.5rem,7vw,4.5rem) clamp(1.5rem,4vw,2.5rem);border-bottom:1px solid var(--line)}
+.top h1{font-size:var(--s7);font-weight:600;line-height:1;margin-block:.8rem .9rem}
+.dek{font-size:1.15rem;color:var(--muted);max-width:58ch}
+.byline{margin-top:1.3rem;font-size:var(--s2);color:var(--muted)}
+.byline strong{color:var(--ink);font-weight:600}
+
+.totals{display:grid;grid-template-columns:repeat(4,1fr);margin:clamp(1.8rem,4vw,2.6rem) 0 0;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.totals div{padding:.9rem 1.1rem;border-left:1px solid var(--line)}
+.totals div:first-child{border-left:0}
+.totals dt{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.totals dd{margin:0;font-family:var(--display);font-weight:700;font-size:2.4rem;font-variant-numeric:lining-nums tabular-nums;line-height:1.05}
+.totals .opp dd{color:var(--navy)}
+.totals .risk dd{color:var(--ember)}
+
+section{padding-block:clamp(2.2rem,5vw,3.4rem);border-bottom:1px solid var(--line)}
+section>.wrap{display:flex;flex-direction:column;gap:var(--s4)}
+.prose{display:flex;flex-direction:column;gap:1rem;color:var(--muted)}
+.prose strong{color:var(--ink);font-weight:600}
+.lead{font-size:1.15rem;color:var(--ink)}
+
+.findings{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1rem}
+.findings li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.4rem}
+.findings b{font-family:var(--mono);font-size:var(--s1);color:var(--ember);font-weight:500}
+.findings h3{font-size:1.05rem}
+.findings p{color:var(--muted);font-size:.95rem}
+
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(1rem,2.5vw,1.6rem);display:flex;flex-direction:column;gap:.9rem;min-width:0}
+.chart-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:.8rem}
+.chart-head>div{min-width:0}
+.chart-head p{color:var(--muted);font-size:var(--s2);margin-top:.3rem;max-width:60ch}
+.plot{position:relative;min-width:0}
+.plot svg{display:block;overflow:visible}
+.note{font-size:var(--s1);color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;padding:3px;gap:2px;background:var(--paper);flex-wrap:wrap}
+.seg button{font:500 var(--s2)/1 var(--body);padding:.55rem .8rem;border-radius:7px;border:0;background:transparent;color:var(--muted);cursor:pointer;transition:background .25s,color .25s}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.legend{display:flex;flex-wrap:wrap;gap:.9rem;font-size:var(--s1);color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:.35rem}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.k-priv{background:var(--navy)}
+.k-multi{background:var(--ember)}
+.k-opp{background:var(--navy)}
+.k-risk{background:var(--ember)}
+.k-mis{background:var(--wood)}
+
+.tick text,.lbl{fill:var(--muted);font-family:var(--body);font-size:12px}
+.tick line,.grid line{stroke:var(--line)}
+.domain{stroke:none}
+.name{fill:var(--ink);font-family:var(--body);font-size:13px}
+.val{fill:var(--ink);font-family:var(--mono);font-size:12px}
+.val.zero{fill:var(--ember)}
+.pt-lbl{fill:var(--ink);font-family:var(--body);font-size:12px;pointer-events:none}
+.quad{fill:var(--muted);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
+.tip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(10,12,40,.16);padding:.5rem .7rem;font-size:var(--s1);line-height:1.45;white-space:nowrap;z-index:2}
+.tip .t{font-weight:600;color:var(--ink)}
+.tip .r{display:flex;gap:.45rem;align-items:center;color:var(--muted)}
+.tip .r i{width:8px;height:8px;border-radius:2px;display:inline-block}
+.tip .r b{color:var(--ink);font-family:var(--mono);font-weight:500;margin-left:auto;padding-left:.8rem}
+
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,26rem),1fr));gap:1rem}
+
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:var(--s2);font-variant-numeric:tabular-nums}
+th{text-align:left;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;padding:.55rem .6rem;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:.55rem .6rem;border-bottom:1px solid var(--line)}
+td.n,th.n{text-align:right}
+.pill{display:inline-block;font-size:var(--s1);padding:.1rem .55rem;border-radius:999px;background:var(--navy-soft);color:var(--navy);white-space:nowrap}
+.pill.m{background:var(--ember-soft);color:var(--ember)}
+
+details.method{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem}
+details.method summary{cursor:pointer;font-weight:600}
+details.method ol{margin:.8rem 0 0;padding-left:1.2rem;color:var(--muted);display:flex;flex-direction:column;gap:.5rem}
+details.method p{color:var(--muted);margin-top:.8rem}
+
+.arc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:.6rem}
+.arc li{display:flex;flex-direction:column;gap:.2rem;padding:.8rem 1rem;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.arc li span{font-family:var(--mono);font-size:var(--s1);color:var(--muted)}
+.arc li strong{font-weight:600}
+.arc li small{color:var(--muted);font-size:var(--s2);line-height:1.45}
+.arc li.done{border-color:var(--ember)}
+.arc li.done span{color:var(--ember)}
+
+footer{padding-block:2rem 3rem;color:var(--muted);font-size:var(--s2)}
+footer .wrap{display:flex;flex-direction:column;gap:.8rem}
+footer p{max-width:80ch}
+
+@media (max-width:620px){
+  .totals{grid-template-columns:repeat(2,1fr)}
+  .totals div:nth-child(3){border-left:0}
+  .totals div:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="/">GJK<span>.</span></a>
+    <a class="back" href="/#thesis">The African Thesis · all weeks</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap top">
+    <div class="eyebrow">The African Thesis · Week 01 of 06 · November 2026</div>
+    <h1>How Wall Street Sees Africa</h1>
+    <p class="dek">What global investors say about African markets, measured sentence by sentence. Ten public institutional outlooks, scored for opportunity, risk and mispricing language.</p>
+    <p class="byline">By <strong>Gyewava Jonathan Kasule</strong> · Fordham MSBA · Level II Candidate in the CFA Program</p>
+    <dl class="totals" aria-label="Week 1 totals">
+      <div class="opp"><dt>Opportunity</dt><dd>27</dd></div>
+      <div class="risk"><dt>Risk</dt><dd>19</dd></div>
+      <div><dt>Mispricing</dt><dd>24</dd></div>
+      <div><dt>Outlooks</dt><dd>10</dd></div>
+    </dl>
+  </div>
+
+  <section id="summary">
+    <div class="wrap read prose">
+      <div class="eyebrow">Summary</div>
+      <p class="lead">Across ten outlooks, opportunity language outweighed risk language 27 to 19, a 42% margin, and 24 sentences used language consistent with an underpricing view of African assets.</p>
+      <p>The sharper finding is who said it. <strong>Private capital read the continent far more bullishly than the multilaterals.</strong> Morgan Stanley and BlackRock carry the strongest opportunity signals, while both IMF regional outlooks contain none. That gap says more about mandates and time horizons than about who is right, and it is where the real debate sits.</p>
+      <p>This is a first pass on a small corpus: 70 tagged signal matches across ten documents, so a single report can move a ranking. The corpus widens each week.</p>
+    </div>
+  </section>
+
+  <section id="institutions">
+    <div class="wrap">
+      <div class="chart">
+        <div class="chart-head">
+          <div>
+            <h2>Signals by institution</h2>
+            <p>Sentences matching each signal taxonomy, per outlook. Pick a signal to re-rank; hover a bar for all three scores.</p>
+          </div>
+          <div class="seg" role="group" aria-label="Signal to rank by">
+            <button type="button" id="rank-opp" data-k="opp" aria-pressed="true">Opportunity</button>
+            <button type="button" id="rank-risk" data-k="risk" aria-pressed="false">Risk</button>
+            <button type="button" id="rank-mis" data-k="mis" aria-pressed="false">Mispricing</button>
+          </div>
+        </div>
+        <div class="legend"><span><i class="k-priv"></i>Private capital</span><span><i class="k-multi"></i>Multilateral (IMF, World Bank)</span></div>
+        <div class="plot" id="rank"></div>
+        <p class="note">Counts of sentences, not a forecast and not investment advice.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="divide">
+    <div class="wrap">
+      <div class="read prose">
+        <div class="eyebrow">The divide</div>
+        <h2 style="color:var(--ink)">Private capital and the multilaterals are reading different continents</h2>
+        <p>Averaged per outlook, the seven private-capital reports carry nearly four opportunity sentences each. The three multilateral reports carry none, and a similar or higher dose of risk language. Plotting each outlook by its opportunity and risk scores shows two clusters that barely overlap.</p>
+      </div>
+      <div class="two">
+        <div class="chart">
+          <div class="chart-head">
+            <div>
+              <h3>Average signals per outlook</h3>
+              <p>Private capital (7 outlooks) vs multilaterals (3).</p>
+            </div>
+          </div>
+          <div class="legend"><span><i class="k-opp"></i>Opportunity</span><span><i class="k-risk"></i>Risk</span><span><i class="k-mis"></i>Mispricing</span></div>
+          <div class="plot" id="groups"></div>
+        </div>
+        <div class="chart">
+          <div class="chart-head">
+            <div>
+              <h3>Opportunity vs risk</h3>
+              <p>Each dot is one outlook; size shows mispricing signals. Hover for details.</p>
+            </div>
+          </div>
+          <div class="legend"><span><i class="k-priv"></i>Private capital</span><span><i class="k-multi"></i>Multilateral</span></div>
+          <div class="plot" id="scatter"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="findings">
+    <div class="wrap">
+      <div class="eyebrow">Key findings</div>
+      <ol class="findings">
+        <li><b>01</b><h3>Opportunity outweighs risk</h3><p>27 opportunity-coded sentences against 19 risk-coded ones, a stronger lean than the usual headline narrative on Africa suggests.</p></li>
+        <li><b>02</b><h3>Underpricing language is common</h3><p>24 sentences use terms such as "attractive", "compelling" or "structural opportunity". That language is consistent with an underpricing view; whether prices agree is the question for Week 6.</p></li>
+        <li><b>03</b><h3>A clear institutional divide</h3><p>Private managers lead on opportunity; the IMF outlooks show none. Different mandates, time horizons and risk frameworks, read side by side.</p></li>
+        <li><b>04</b><h3>South Africa dominates mentions</h3><p>The most liquid and most researched market on the continent is also the most discussed, which can crowd out the rest of the story.</p></li>
+        <li><b>05</b><h3>FX and governance lead the risks</h3><p>Currency volatility and governance carry most of the risk language. Infrastructure gaps and debt sustainability follow. Citi's annual report scores highest on risk.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="data">
+    <div class="wrap">
+      <div class="chart">
+        <div class="chart-head"><div><h2>The scores</h2><p>All ten outlooks, ranked by opportunity signals.</p></div></div>
+        <div class="tbl-wrap">
+          <table id="tbl">
+            <thead><tr><th>Outlook</th><th>Type</th><th class="n">Opportunity</th><th class="n">Risk</th><th class="n">Mispricing</th><th>Read</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="wrap read">
+      <details class="method">
+        <summary>Method</summary>
+        <ol>
+          <li><strong>Extraction.</strong> Text pulled from each PDF with pdfplumber.</li>
+          <li><strong>Cleaning.</strong> Disclaimers, page numbers and legal boilerplate removed with regex.</li>
+          <li><strong>Africa sentences.</strong> spaCy kept every sentence naming one of 23 African countries or 9 regional designations.</li>
+          <li><strong>Scoring.</strong> Each sentence matched against three keyword taxonomies built for institutional investment language: 10 opportunity terms, 10 risk terms and 28 mispricing terms.</li>
+        </ol>
+        <p>FinBERT sentence-level sentiment was run alongside the keyword scores; Week 1 reports the keyword scores only. Raw counts are not normalised for report length yet, and the mispricing taxonomy picks up promotional language as well as valuation arguments. Both are being refined as the corpus grows.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="next">
+    <div class="wrap">
+      <div class="eyebrow">The series</div>
+      <ol class="arc">
+        <li class="done"><span>Week 01</span><strong>How Wall Street Sees Africa</strong><small>US institutional sentiment, mapped.</small></li>
+        <li><span>Week 02</span><strong>Bulls, Bears &amp; Blind Spots</strong><small>Where institutions agree and disagree, by region and sector.</small></li>
+        <li><span>Week 03</span><strong>What Africa Thinks of Itself</strong><small>African firms and DFIs enter the corpus.</small></li>
+        <li><span>Week 04</span><strong>The Government Bet</strong><small>National development plans against investor sentiment.</small></li>
+        <li><span>Week 05</span><strong>Lost in Translation</strong><small>The full perception gap between Western and African narratives.</small></li>
+        <li><span>Week 06</span><strong>The Mispricing Map</strong><small>Where words and market prices disagree.</small></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:var(--ink)">Sources.</strong> Public outlooks and reports from BlackRock Investment Institute, Vanguard, Morgan Stanley Investment Management, Citigroup, RBC Global Asset Management, the International Monetary Fund and the World Bank.</p>
+    <p>For information and research only. Nothing here is financial or investment advice or a recommendation to buy or sell any security. Views are analytical conclusions from public data and do not represent any institution named.</p>
+    <p>© 2026 Gyewava Jonathan Kasule · <a href="/">gjk2-maker.github.io</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Week 1 scores; m = multilateral
+  var DATA=[
+    {n:'Morgan Stanley EM Outlook',s:'Morgan Stanley EM',opp:5,risk:3,mis:4,m:0,read:'Most bullish'},
+    {n:'BlackRock Midyear 2025',s:'BlackRock',opp:5,risk:2,mis:3,m:0,read:'Strongly bullish'},
+    {n:'Vanguard 2025 Outlook',s:'Vanguard 2025',opp:4,risk:1,mis:4,m:0,read:'Bullish'},
+    {n:'Vanguard 2026 Outlook',s:'Vanguard 2026',opp:4,risk:1,mis:3,m:0,read:'Bullish'},
+    {n:'Morgan Stanley EM Leaders',s:'MS EM Leaders',opp:3,risk:1,mis:4,m:0,read:'Bullish'},
+    {n:'Citi 2025 Annual Report',s:'Citi',opp:3,risk:4,mis:2,m:0,read:'Cautiously bullish'},
+    {n:'RBC EM Outlook 2025',s:'RBC',opp:3,risk:1,mis:3,m:0,read:'Bullish'},
+    {n:'World Bank SSA, Jun 2025',s:'World Bank',opp:0,risk:2,mis:1,m:1,read:'Cautious'},
+    {n:'IMF Regional Outlook, Oct 2025',s:'IMF Oct 25',opp:0,risk:3,mis:0,m:1,read:'Risk-focused'},
+    {n:'IMF Regional Outlook, Apr 2025',s:'IMF Apr 25',opp:0,risk:1,mis:0,m:1,read:'Risk-focused'}
+  ];
+  var SIG=[{k:'opp',l:'Opportunity',c:'--navy'},{k:'risk',l:'Risk',c:'--ember'},{k:'mis',l:'Mispricing',c:'--wood'}];
+  var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var DUR=still?0:750;
+  function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()}
+  function color(d){return d.m?'var(--ember)':'var(--navy)'}
+
+  // table renders without d3
+  var tb=document.querySelector('#tbl tbody');
+  DATA.forEach(function(d){
+    var tr=document.createElement('tr');
+    [d.n,null,d.opp,d.risk,d.mis,d.read].forEach(function(v,i){
+      var td=document.createElement('td');
+      if(i===1){var p=document.createElement('span');p.className='pill'+(d.m?' m':'');p.textContent=d.m?'Multilateral':'Private';td.appendChild(p)}
+      else td.textContent=v;
+      if(i>=2&&i<=4)td.className='n';
+      tr.appendChild(td);
+    });
+    tb.appendChild(tr);
+  });
+
+  if(!window.d3)return;
+
+  function tipFor(host){
+    var t=host.select('.tip');
+    if(t.empty())t=host.append('div').attr('class','tip').attr('hidden',true);
+    return {
+      show:function(ev,d){
+        t.selectAll('*').remove();
+        t.append('div').attr('class','t').text(d.n);
+        SIG.forEach(function(s){
+          var r=t.append('div').attr('class','r');
+          r.append('i').style('background','var('+s.c+')');
+          r.append('span').text(s.l);
+          r.append('b').text(d[s.k]);
+        });
+        t.attr('hidden',null);
+        var hb=host.node().getBoundingClientRect(),p=d3.pointer(ev,host.node()),tw=t.node().offsetWidth;
+        t.style('left',Math.max(0,Math.min(p[0]+14,hb.width-tw))+'px').style('top',Math.max(0,p[1]-10)+'px');
+      },
+      hide:function(){t.attr('hidden',true)}
+    };
+  }
+
+  // 1. ranked bars
+  var rankHost=d3.select('#rank'),sig='opp';
+  function drawRank(animate){
+    var W=rankHost.node().clientWidth,narrow=W<520,rh=narrow?40:36;
+    var names=narrow?DATA.map(function(d){return d.s}):DATA.map(function(d){return d.n});
+    var svg=rankHost.select('svg');
+    if(svg.empty())svg=rankHost.append('svg');
+    svg.attr('width','100%').attr('viewBox','0 0 '+W+' '+(DATA.length*rh+24));
+    var probe=svg.append('text').attr('class','name');
+    var nameW=d3.max(names,function(n){probe.text(n);return probe.node().getComputedTextLength()});
+    probe.remove();
+    var m={l:Math.min(nameW+12,W*.45),r:28,t:0,b:24};
+    var x=d3.scaleLinear([0,5],[m.l,W-m.r]);
+    var order=DATA.map(function(d,i){return i}).sort(function(a,b){return DATA[b][sig]-DATA[a][sig]||a-b});
+    var pos={};order.forEach(function(j,p){pos[j]=p});
+    var y=function(i){return pos[i]*rh};
+    var t=svg.transition().duration(animate?DUR:0).ease(d3.easeCubicOut);
+
+    var g=svg.selectAll('g.grid').data([0]).join('g').attr('class','grid');
+    g.selectAll('line').data([0,1,2,3,4,5]).join('line')
+      .attr('x1',function(v){return x(v)}).attr('x2',function(v){return x(v)}).attr('y1',0).attr('y2',DATA.length*rh);
+    var ax=svg.selectAll('g.tick-row').data([0]).join('g').attr('class','tick-row tick');
+    ax.selectAll('text').data([0,1,2,3,4,5]).join('text')
+      .attr('x',function(v){return x(v)}).attr('y',DATA.length*rh+16).attr('text-anchor','middle').text(function(v){return v});
+
+    var rows=svg.selectAll('g.row').data(DATA,function(d){return d.n}).join(function(e){
+      var r=e.append('g').attr('class','row').attr('transform',function(d,i){return 'translate(0,'+y(i)+')'});
+      r.append('text').attr('class','name');
+      r.append('rect').attr('class','trk');
+      r.append('rect').attr('class','bar');
+      r.append('text').attr('class','val');
+      r.append('rect').attr('class','hit').attr('fill','transparent');
+      return r;
+    });
+    rows.select('.name').attr('x',m.l-12).attr('y',rh/2).attr('dy','.35em').attr('text-anchor','end').text(function(d,i){return names[i]});
+    rows.select('.trk').attr('x',m.l).attr('y',rh/2-6).attr('height',12).attr('rx',6).attr('width',x(5)-m.l).attr('fill','var(--line)').attr('opacity',.45);
+    rows.select('.bar').attr('x',m.l).attr('y',rh/2-6).attr('height',12).attr('rx',6).attr('fill',color);
+    rows.select('.hit').attr('x',0).attr('y',0).attr('width',W).attr('height',rh);
+    rows.transition(t).attr('transform',function(d,i){return 'translate(0,'+y(i)+')'});
+    rows.select('.bar').transition(t).attr('width',function(d){return Math.max(0,x(d[sig])-m.l)});
+    rows.select('.val').classed('zero',function(d){return d[sig]===0}).attr('y',rh/2).attr('dy','.35em').text(function(d){return d[sig]})
+      .transition(t).attr('x',function(d){return x(d[sig])+8});
+    var tip=tipFor(rankHost);
+    rows.select('.hit').on('pointermove',tip.show).on('pointerleave',tip.hide);
+    rows.attr('aria-label',function(d){return d.n+': '+d[sig]});
+  }
+  d3.selectAll('#institutions .seg button').on('click',function(){
+    sig=this.dataset.k;
+    d3.selectAll('#institutions .seg button').attr('aria-pressed',function(){return this.dataset.k===sig});
+    drawRank(true);
+  });
+
+  // 2. group averages
+  var groupHost=d3.select('#groups');
+  var GROUPS=[{g:'Private capital',rows:DATA.filter(function(d){return!d.m})},{g:'Multilateral',rows:DATA.filter(function(d){return d.m})}]
+    .map(function(G){var o={g:G.g,n:G.rows.length};SIG.forEach(function(s){o[s.k]=d3.mean(G.rows,function(d){return d[s.k]})});return o});
+  function drawGroups(){
+    var W=groupHost.node().clientWidth,H=240,m={l:28,r:8,t:16,b:30};
+    groupHost.selectAll('svg').remove();
+    var svg=groupHost.append('svg').attr('width','100%').attr('viewBox','0 0 '+W+' '+H);
+    var x0=d3.scaleBand(GROUPS.map(function(d){return d.g}),[m.l,W-m.r]).padding(.28);
+    var x1=d3.scaleBand(SIG.map(function(s){return s.k}),[0,x0.bandwidth()]).padding(.14);
+    var y=d3.scaleLinear([0,4],[H-m.b,m.t]);
+    svg.append('g').attr('class','grid').selectAll('line').data(y.ticks(4)).join('line')
+      .attr('x1',m.l).attr('x2',W-m.r).attr('y1',function(v){return y(v)}).attr('y2',function(v){return y(v)});
+    svg.append('g').attr('class','tick').selectAll('text').data(y.ticks(4)).join('text')
+      .attr('x',m.l-8).attr('y',function(v){return y(v)}).attr('dy','.35em').attr('text-anchor','end').text(function(v){return v});
+    svg.append('g').attr('class','tick').selectAll('text').data(GROUPS).join('text')
+      .attr('x',function(d){return x0(d.g)+x0.bandwidth()/2}).attr('y',H-8).attr('text-anchor','middle')
+      .text(function(d){return d.g+' ('+d.n+')'});
+    var fmt=d3.format('.1f');
+    var g=svg.selectAll('g.grp').data(GROUPS).join('g').attr('class','grp').attr('transform',function(d){return 'translate('+x0(d.g)+',0)'});
+    g.selectAll('rect').data(function(d){return SIG.map(function(s){return {k:s.k,c:s.c,v:d[s.k]}})}).join('rect')
+      .attr('x',function(d){return x1(d.k)}).attr('width',x1.bandwidth()).attr('rx',Math.min(4,x1.bandwidth()/2))
+      .attr('fill',function(d){return 'var('+d.c+')'})
+      .attr('y',y(0)).attr('height',0)
+      .transition().duration(DUR).delay(function(d,i){return i*80})
+      .attr('y',function(d){return y(d.v)}).attr('height',function(d){return y(0)-y(d.v)});
+    g.selectAll('text.val').data(function(d){return SIG.map(function(s){return {k:s.k,v:d[s.k]}})}).join('text')
+      .attr('class',function(d){return 'val'+(d.v===0?' zero':'')}).attr('text-anchor','middle')
+      .attr('x',function(d){return x1(d.k)+x1.bandwidth()/2}).attr('y',function(d){return y(d.v)-6})
+      .text(function(d){return fmt(d.v)});
+  }
+
+  // 3. opportunity vs risk scatter
+  var scHost=d3.select('#scatter');
+  function drawScatter(){
+    var W=scHost.node().clientWidth,H=280,m={l:34,r:16,t:16,b:38};
+    scHost.selectAll('svg').remove();
+    var svg=scHost.append('svg').attr('width','100%').attr('viewBox','0 0 '+W+' '+H);
+    var x=d3.scaleLinear([-.5,5.5],[m.l,W-m.r]),y=d3.scaleLinear([0,4.6],[H-m.b,m.t]),r=d3.scaleSqrt([0,4],[4,13]);
+    svg.append('g').attr('class','grid').selectAll('line').data([0,1,2,3,4,5]).join('line')
+      .attr('x1',function(v){return x(v)}).attr('x2',function(v){return x(v)}).attr('y1',m.t).attr('y2',H-m.b);
+    svg.append('g').attr('class','grid').selectAll('line').data([0,1,2,3,4]).join('line')
+      .attr('x1',m.l).attr('x2',W-m.r).attr('y1',function(v){return y(v)}).attr('y2',function(v){return y(v)});
+    svg.append('g').attr('class','tick').selectAll('text').data([0,1,2,3,4,5]).join('text')
+      .attr('x',function(v){return x(v)}).attr('y',H-m.b+16).attr('text-anchor','middle').text(function(v){return v});
+    svg.append('g').attr('class','tick').selectAll('text').data([0,1,2,3,4]).join('text')
+      .attr('x',m.l-8).attr('y',function(v){return y(v)}).attr('dy','.35em').attr('text-anchor','end').text(function(v){return v});
+    svg.append('text').attr('class','lbl').attr('x',(m.l+W-m.r)/2).attr('y',H-4).attr('text-anchor','middle').text('Opportunity signals');
+    svg.append('text').attr('class','lbl').attr('transform','translate(11,'+((m.t+H-m.b)/2)+') rotate(-90)').attr('text-anchor','middle').text('Risk signals');
+    // jitter only where points overlap exactly
+    var seen={};
+    var pts=DATA.map(function(d){var k=d.opp+'-'+d.risk;seen[k]=(seen[k]||0)+1;return {d:d,o:seen[k]-1}});
+    var tip=tipFor(scHost);
+    var dots=svg.append('g').selectAll('circle').data(pts).join('circle')
+      .attr('cx',function(p){return x(p.d.opp)+p.o*9}).attr('cy',function(p){return y(p.d.risk)-p.o*9})
+      .attr('fill',function(p){return color(p.d)}).attr('fill-opacity',.82).attr('stroke','var(--surface)').attr('stroke-width',1.5)
+      .attr('r',0)
+      .on('pointermove',function(ev,p){tip.show(ev,p.d)}).on('pointerleave',tip.hide);
+    dots.transition().duration(DUR).delay(function(p,i){return i*40}).attr('r',function(p){return r(p.d.mis)});
+    var lab=pts.filter(function(p){return p.d.opp===5||p.d.n.indexOf('IMF Regional Outlook, Oct')===0||p.d.n.indexOf('Citi')===0});
+    svg.append('g').selectAll('text').data(lab).join('text').attr('class','pt-lbl')
+      .attr('x',function(p){return x(p.d.opp)+p.o*9+(p.d.opp>=4?-16:16)}).attr('y',function(p){return y(p.d.risk)-p.o*9+4})
+      .attr('text-anchor',function(p){return p.d.opp>=4?'end':'start'}).text(function(p){return p.d.s});
+  }
+
+  function all(animate){drawRank(animate);drawGroups();drawScatter()}
+  all(false);
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){drawRank(false);drawGroups();drawScatter()},120)});
+})();
+</script>
+</body>
+</html>
