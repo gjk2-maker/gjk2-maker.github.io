@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Running My Life Like a Small Company · KASCORP</title>
+<meta name="description" content="KASCORP is a set of AI agents organized like a company, with one human employee. How it is structured, the rules that keep it safe, and what building it taught me.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Running My Life Like a Small Company · KASCORP">
+<meta property="og:description" content="A set of AI agents organized like a company, with one human employee: the roles, the rules of the house, and what building it taught me.">
+<meta property="og:url" content="https://gjk2-maker.github.io/notes/kascorp/">
+<meta property="og:image" content="https://gjk2-maker.github.io/photos/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2328327F'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='24' font-weight='700' fill='%23F3F2FA' text-anchor='middle'%3EGJK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script data-goatcounter="https://gjk2.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<style>
+/* Same palette and type as the home page and the African Thesis reports */
+:root{
+  --paper:#F3F2F7; --surface:#FCFBFE; --ink:#171A3A; --muted:#5D5F7C; --line:#DCDBE8;
+  --navy:#28327F; --navy-soft:#E3E4F4; --ember:#C2501F; --ember-soft:#F7E3D7; --wood:#C09E77;
+  --display:"Cormorant Garamond", Garamond, "Times New Roman", serif;
+  --body:"Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --s1:.75rem; --s2:.875rem; --s3:1rem; --s4:1.2rem; --s5:1.75rem; --s6:clamp(2rem,4vw,2.8rem); --s7:clamp(2.4rem,6vw,4.2rem);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#10112A; --surface:#181A39; --ink:#ECEBF5; --muted:#A2A3C2; --line:#2B2D54;
+  --navy:#9EA7F3; --navy-soft:#232768; --ember:#F08A5B; --ember-soft:#3B2321; --wood:#A88762; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#10112A; --surface:#181A39; --ink:#ECEBF5; --muted:#A2A3C2; --line:#2B2D54;
+  --navy:#9EA7F3; --navy-soft:#232768; --ember:#F08A5B; --ember-soft:#3B2321; --wood:#A88762; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--s3);line-height:1.7;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.08}
+h1,h2{font-family:var(--display);font-weight:600;letter-spacing:-.01em}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:var(--s1);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding-block:.7rem}
+.mark{font-family:var(--display);font-weight:700;font-size:1.45rem;text-decoration:none}
+.mark span{color:var(--ember)}
+.back{font-size:var(--s2);color:var(--muted);text-decoration:none}
+.back:hover{color:var(--ink)}
+
+.top{padding-block:clamp(2.5rem,7vw,4.5rem) clamp(1.5rem,4vw,2.5rem);border-bottom:1px solid var(--line)}
+.top h1{font-size:var(--s7);line-height:1.02;margin-block:.8rem .9rem;max-width:18ch}
+.dek{font-size:1.15rem;color:var(--muted);max-width:58ch}
+.byline{margin-top:1.3rem;font-size:var(--s2);color:var(--muted)}
+.byline strong{color:var(--ink);font-weight:600}
+
+article{padding-block:clamp(2rem,5vw,3.2rem)}
+.prose{max-width:68ch;display:flex;flex-direction:column;gap:1.15rem;font-size:1.06rem}
+.prose h2{font-size:var(--s5);margin-top:1.4rem}
+.prose .lead{font-size:1.2rem}
+.prose strong{font-weight:600}
+
+/* org chart: plain HTML so it reflows on a phone */
+.org{margin:clamp(1.8rem,4vw,2.6rem) 0;padding:clamp(1.1rem,3vw,1.8rem);border:1px solid var(--line);border-radius:16px;background:var(--surface);display:flex;flex-direction:column;align-items:center;gap:0}
+.org figcaption{align-self:flex-start;font-size:var(--s2);color:var(--muted);margin-top:1.2rem;max-width:68ch}
+.node{border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:.65rem .95rem;text-align:center;min-width:0}
+.node strong{display:block;font-weight:600;font-size:.98rem;line-height:1.3}
+.node small{display:block;color:var(--muted);font-size:var(--s2);line-height:1.4;margin-top:.15rem}
+.node.me{border-color:var(--ember);background:var(--ember-soft)}
+.node.cos{border-color:var(--navy);background:var(--navy-soft);min-width:min(100%,18rem)}
+.stem{width:1px;height:1.4rem;background:var(--line)}
+.depts{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;padding-top:1.4rem;position:relative}
+.depts::before{content:"";position:absolute;top:0;left:12.5%;right:12.5%;height:1.4rem;border:1px solid var(--line);border-bottom:0;border-radius:10px 10px 0 0}
+.depts .node{position:relative}
+.side{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--line)}
+.side .node{background:transparent;border-style:dashed}
+.side-label{grid-column:1/-1;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center}
+
+.rules{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:.6rem;max-width:68ch}
+.rules li{border-left:3px solid var(--navy);padding:.35rem 0 .35rem .8rem;font-size:.98rem}
+
+footer{padding-block:2rem 3rem;color:var(--muted);font-size:var(--s2);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-direction:column;gap:.8rem}
+
+@media (max-width:640px){
+  .depts{grid-template-columns:1fr 1fr}
+  .depts::before{left:25%;right:25%}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="/">GJK<span>.</span></a>
+    <a class="back" href="/#wins">Back to the work</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap top">
+    <div class="eyebrow">Build notes · Agentic AI · November 2026</div>
+    <h1>Running my life like a small company</h1>
+    <p class="dek">KASCORP is a set of AI agents organized like a company, with one human employee. Here is how it is structured, the rules that keep it safe, and what building it has taught me.</p>
+    <p class="byline">By <strong>Gyewava Jonathan Kasule</strong> · Fordham MSBA</p>
+  </div>
+
+  <article class="wrap">
+    <div class="prose">
+      <p class="lead">Like a lot of graduate students, I carry more than one life at once: coursework, work, a few personal businesses and a handful of projects I can't stop starting. For a while I handled it the usual way, with more apps, more tabs and more reminders. At some point I asked a different question. What would it look like if I ran all of this the way a small, well-run organization runs?</p>
+      <p>KASCORP is my answer. It is a set of AI agents organized like a company, and I am its only human employee.</p>
+    </div>
+
+    <figure class="org" aria-label="KASCORP organization chart">
+      <div class="node me"><strong>Me</strong><small>The only human</small></div>
+      <div class="stem"></div>
+      <div class="node cos"><strong>Chief of Staff</strong><small>Takes every request, routes it, returns one answer</small></div>
+      <div class="depts">
+        <div class="node"><strong>Growth</strong><small>Relationships and opportunities</small></div>
+        <div class="node"><strong>Academy</strong><small>Learning and projects</small></div>
+        <div class="node"><strong>Business desk</strong><small>My personal businesses</small></div>
+        <div class="node"><strong>HR</strong><small>Hires, reviews and audits the AI</small></div>
+      </div>
+      <div class="side">
+        <div class="side-label">Serving every department</div>
+        <div class="node"><strong>Reviewer</strong><small>Reads everything before it leaves</small></div>
+        <div class="node"><strong>Brand Library</strong><small>Who I am and how I sound</small></div>
+      </div>
+      <figcaption>The roles, not the wiring. What each department does inside will keep changing.</figcaption>
+    </figure>
+
+    <div class="prose">
+      <h2>The cast</h2>
+      <p>At the front sits the <strong>Chief of Staff</strong>. It is the only one I talk to. I describe what I need in plain language, and it decides who should handle it, hands the work to the right department and comes back with one answer. I never have to remember which tool does what. That is the Chief of Staff's job.</p>
+      <p>Behind it are the departments, each with a clear remit. <strong>Growth</strong> looks after relationships and opportunities: the people I meet, the conversations worth continuing and the writing I put into the world. <strong>Academy</strong> handles learning, from coursework to the projects that come out of it. The <strong>Business desk</strong> keeps an eye on my personal businesses, their numbers and their strategy.</p>
+      <p>And then there is <strong>HR</strong>, my favorite. HR doesn't manage me. It manages the AI. When I want to add a new tool, HR interviews it first: what it can reach, whether it is safe, and whether something we already have could do the job instead. It recently hired Piper, an offline voice that reads replies aloud, after checking every file it downloaded. HR also reviews how the other departments perform and audits their conduct.</p>
+      <p>Two more members keep everyone honest. The <strong>Reviewer</strong> reads anything before it leaves the building and flags what should stay private. The <strong>Brand Library</strong> holds who I am, how I sound and what I never say in public, so every department speaks with one voice.</p>
+
+      <h2>The rules of the house</h2>
+      <p>The characters are the fun part. The rules are what make it work.</p>
+    </div>
+
+    <ul class="rules" style="margin-block:1.2rem">
+      <li>Read before you write. Nothing changes unless it needs to.</li>
+      <li>Agents draft, but never send.</li>
+      <li>A human approves everything that goes out.</li>
+      <li>Private things stay private, checked automatically before anything leaves.</li>
+      <li>Anything refused is stopped and logged.</li>
+      <li>New tools are interviewed before they are hired.</li>
+    </ul>
+
+    <div class="prose">
+      <p>When an agent tries something it shouldn't, it is stopped and the attempt is logged, so I can see what was tried and why. None of these rules depend on the AI behaving well. They are built around it.</p>
+
+      <h2>What building it taught me</h2>
+      <p>Building this taught me more than I expected. The first lesson was that guardrails are design decisions, not afterthoughts. The most important choices I made were about what the system cannot do. The second was that the interesting work isn't in the prompts but in the governance: who decides, who checks, and how you know what happened. The third was humbler. A system like this is only as good as the person directing it, and it has made me more deliberate about what I ask for and why.</p>
+      <p>It is also, honestly, a lot of fun. The site you are reading is built and updated by it.</p>
+      <p>The departments will change. Some roles will merge, new ones will appear, and HR will let a few go. That is the point. KASCORP isn't a script that does one job. It is an organization, and organizations are meant to grow.</p>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Gyewava Jonathan Kasule · <a href="/">gjk2-maker.github.io</a></p>
+  </div>
+</footer>
+</body>
+</html>
